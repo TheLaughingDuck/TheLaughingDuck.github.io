@@ -1,1 +1,1 @@
-This repo builds a little website, hosted at [TheLaughingDuck.github.io](TheLaughingDuck.github.io).
+This repo builds a little website, hosted at [TheLaughingDuck.github.io](https://TheLaughingDuck.github.io).
