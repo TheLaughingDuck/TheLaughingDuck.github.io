@@ -1,0 +1,69 @@
+<!--This is a comment-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simon Jorstedt</title>
+    <link rel="icon" type="image/png" href="images/DuckHead.png">
+
+    <style>
+        img {
+            max-height: 40%;
+            max-width: 40%;
+            height: auto;
+            width: 300px;
+            align-items: top;
+        }
+
+        div {
+            margin: auto;
+            max-width: 900px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+
+<!-- background-color: #FFF4A3; -->
+
+
+<body>
+    <h1>Here you go :)</h1>
+
+    <a href="index.html">Go back</a>
+    <br><br>
+
+    <div id="imageContainer"></div>
+    <script>
+        window.onload = function() {
+            var images = [
+                "vibe_images/have_a_lovely_day.jpg",
+                "vibe_images/img1.jpg",
+                "vibe_images/people_are_dancing.jpg",
+                "vibe_images/remember_to_hydrate.jpg",
+                "vibe_images/different_paths.webp",
+                "vibe_images/me_supporting_my_pals.webp",
+                "vibe_images/wholesome_trinity.webp",
+                "vibe_images/you_have_grown.webp"
+            ];
+
+            function getImage() {
+                var randomIndex = Math.floor(Math.random() * images.length);
+                var randomImage = images[randomIndex];
+
+                var imgElement = document.createElement("img");
+                imgElement.src = randomImage;
+                imgElement.alt = 'I hope you have a nice day!';
+
+                return imgElement
+            }
+            
+            <!---->
+            var imageContainer = document.getElementById("imageContainer");
+            imageContainer.appendChild(getImage());
+            imageContainer.appendChild(getImage());
+            imageContainer.appendChild(getImage());
+        };
+    </script>
+</body>
+</html>
