@@ -1,0 +1,57 @@
+<!--This is a comment-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simon Jorstedt</title>
+    <link rel="icon" type="image/png" href="images/DuckHead.png">
+</head>
+
+<body>
+    <h1>You want to roll some dice, and this is where to do it</h1>
+
+    <button type="button"
+    onclick="document.getElementById('ShowButton').innerText = Roll(4)">
+    1d4
+    </button>
+
+    <button type="button"
+    onclick="document.getElementById('ShowButton').innerText = Roll(6)">
+    1d6
+    </button>
+
+    <button type="button"
+    onclick="document.getElementById('ShowButton').innerText = Roll(8)">
+    1d8
+    </button>
+
+    <button type="button"
+    onclick="document.getElementById('ShowButton').innerText = Roll(10)">
+    1d10
+    </button>
+
+    <button type="button"
+    onclick="document.getElementById('ShowButton').innerText = Roll(12)">
+    1d12
+    </button>
+
+    <button type="button"
+    onclick="document.getElementById('ShowButton').innerText = Roll(20)">
+    1d20
+    </button>
+
+    <button type="button"
+    onclick="document.getElementById('ShowButton').innerText = Roll(100)">
+    1d100
+    </button>
+
+    <p id="ShowButton"></p>
+    
+    <script>
+        function Roll(sides) {
+            var roll = 1+Math.floor(Math.random() * sides);
+            return roll
+        }
+    </script>
+</body>
+</html>
