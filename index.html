@@ -51,6 +51,33 @@
             background-color: yellow;
             text-align: center;
         }
+
+        .btn-group button {
+            background-color: #04AA6D; /* Green background */
+            border: 1px solid green; /* Green border */
+            color: white; /* White text */
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: center; /* Float the buttons side by side */
+            border-radius: 12px;
+            }
+
+            .btn-group button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+            }
+
+            /* Clear floats (clearfix hack) */
+            .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+            }
+
+            /* Add a background color on hover */
+            .btn-group button:hover {
+            background-color: #3e8e41;
+        }
+
     </style>
 </head>
 
@@ -64,8 +91,12 @@
     </div>
 
     <div id="subpage-container">
-        <a href="meme.html">Link to a subpage with a random wholesome meme</a>
-        <a href="dice.html">Link to a subpage where you can roll dice</a>
+        <div class="btn-group">
+            <br>
+            <button>A project</button>
+            <button onclick="location.href='meme.html';" title="Go to a subpage with random memes">Random memes</button>
+            <button onclick="location.href='dice.html';" title="Go to a subpage where you can roll some dice">Dice Roller</button>
+        </div>
     </div>
 
     
