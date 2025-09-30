@@ -5,9 +5,22 @@
 <head>
     <title>Simon Jorstedt</title>
     <link rel="icon" type="image/png" href="images/DuckHead.png">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- A menu banner -->
+    <div id="top-menu"></div>
+    <script>
+        fetch("menu.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("top-menu").innerHTML = data;
+        });
+    </script>
+
+
     <h1>You want to roll some dice, and this is where to do it</h1>
 
     <button type="button"

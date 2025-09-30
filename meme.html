@@ -6,20 +6,9 @@
     <title>Simon Jorstedt</title>
     <link rel="icon" type="image/png" href="images/DuckHead.png">
 
-    <style>
-        img {
-            max-height: 40%;
-            max-width: 40%;
-            height: auto;
-            width: 300px;
-            align-items: top;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        div {
-            margin: auto;
-            max-width: 900px;
-            display: inline-block;
-        }
+
     </style>
 </head>
 
@@ -28,9 +17,18 @@
 
 
 <body>
-    <h1>Here you go :)</h1>
+    <!-- A menu banner -->
+    <div id="top-menu"></div>
+    <script>
+        fetch("menu.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("top-menu").innerHTML = data;
+        });
+    </script>
 
-    <a href="index.html">Go back</a>
+
+    <h1>Here you go :)</h1>
     <br><br>
 
     <div id="imageContainer"></div>
