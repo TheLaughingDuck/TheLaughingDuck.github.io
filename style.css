@@ -44,7 +44,7 @@ body, html {
 
 /* TOP MENU */
 .top-menu {
-    background: #8a0101;
+    background: #99D9EA; /* #8a0101; */
     padding: 10px 20px;
     display: flex;
     align-items: center;
