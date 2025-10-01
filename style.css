@@ -41,60 +41,64 @@ body, html {
 
 
 
-
 /* TOP MENU */
-.top-menu {
+.menu {
     background: #99D9EA; /* #8a0101; */
-    padding: 10px 20px;
+    padding: 10px 20px; /* Don't remove */
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* logo left, links right */
-}
-
-.logo {
-  height: 80px;   /* adjust size */
-  padding: 5px 5px;
-  width: auto;
-  display: block;
-  border-radius: 30px;
+    justify-content: space-between;
 }
 
 .logo:hover {
-    background-color: #6da5e6;
+    border: 10px solid #6da5e6; /* Green border */
+    border-radius: 50px;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-}
-
-.menu-items {
+.menu-left a {
+    height: 20px;
+    width: 20px;
     display: flex;
-    gap: 15px;
+    color: white;
+    gap: 20px;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+
+    line-height: 1;
 }
 
-.nav-btn {
+.internal_link {
     background-color: #04AA6D; /* Green background */
-    border: 1px solid green; /* Green border */
+    border: 5px solid green; /* Green border */
     color: white; /* White text */
-    padding: 10px 24px; /* Some padding */
+    padding: 8px 20px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     border-radius: 12px;
     font-size: large;
-    }
-
-.btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
 }
 
-    /* Clear floats (clearfix hack) */
-.btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-
-.nav-btn:hover {
+.internal_link:hover {
     background-color: #3e8e41;
+}
+
+.menu_right a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.external_links {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.external_links:hover {
+    background-color: #6da5e6;
+    border-radius: 30px;
 }
