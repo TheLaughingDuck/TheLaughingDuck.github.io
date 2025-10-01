@@ -57,8 +57,8 @@ body, html {
 }
 
 .logo:hover {
-    background-color: #6da5e6;
-    border-radius: 20px;
+    border-radius: 35px;
+    box-shadow: 0 0 0 5px #6da5e6;;
 }
 
 .menu-left a {
