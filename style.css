@@ -50,9 +50,15 @@ body, html {
     justify-content: space-between;
 }
 
+.logo {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
 .logo:hover {
-    border: 10px solid #6da5e6; /* Green border */
-    border-radius: 50px;
+    background-color: #6da5e6;
+    border-radius: 20px;
 }
 
 .menu-left a {
