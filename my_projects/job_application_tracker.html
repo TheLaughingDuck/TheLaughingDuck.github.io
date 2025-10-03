@@ -4,23 +4,25 @@
 <html>
 <head>
     <title>Simon Jorstedt</title>
-    <link rel="icon" type="image/png" href="images/DuckHead.png">
+    <link rel="icon" type="image/png" href="../images/DuckHead.png">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body, html {
+            background-color: lightgray;
+        }
+    </style>
 </head>
 <body>
     <!-- A menu banner -->
     <div id="top-menu"></div>
     <script>
-        fetch("menu.html")
+        fetch("../menu.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("top-menu").innerHTML = data;
         });
     </script>
-
-    <h1>Title</h1>
-
-    <noscript>Sorry, your browser does not support JavaScript!</noscript>
 </body>
 </html>

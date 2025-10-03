@@ -1,0 +1,94 @@
+<!--This is a comment-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simon Jorstedt</title>
+    <link rel="icon" type="image/png" href="../images/DuckHead.png">
+    
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body, html {
+            background-color: lightgray;
+        }
+
+        .all_projects .one_project {
+            background: gray;
+            padding: 0px 30px;
+            border-radius: 30px;
+            max-width: fit-content;
+            row-gap: 100px;
+        }
+
+        .all_projects .one_tag {
+            color: black;
+            font-size: large;
+            background-color: green;
+            padding: 10px 10px;
+            border-radius: 30px;
+        }
+
+        .all_projects .all_tags {
+            display: flex;
+            align-items: center;
+            padding: 20px 10px;
+            display: flex;
+            color: white;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- A menu banner -->
+    <div id="top-menu"></div>
+    <script>
+        fetch("../menu.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("top-menu").innerHTML = data;
+        });
+    </script>
+
+
+    <div class="all_projects">
+        <div class="one_project">
+            <a href="/my_projects/master_thesis.html"><h1>Master Thesis: <i>Multi-sequence 3D MRI fusion for paediatric brain tumour classification using deep learning</i></h1></a>
+            
+            <div class="all_tags">
+                <div class="one_tag"><p>Python</p></div>
+                <div class="one_tag"><p>PyTorch</p></div>
+            </div>
+
+            <p>Deep learning-based 3D MRI classification of brain tumour diagnosis, specifically with ViT and CNN.</p>
+        </div>
+
+        <div class="one_project">
+            <a href="/my_projects/work_clock.html"><h1>Work Clock</h1></a>
+            
+            <div class="all_tags">
+                <div class="one_tag"><p>Python</p></div>
+                <div class="one_tag"><p>SQLite</p></div>
+            </div>
+
+            <p>A small program that helps me keep track of the time I work. Stores logged hours in a SQLite database.</p>
+        </div>
+
+        <div class="one_project">
+            <a href="/my_projects/job_application_tracker.html"><h1>Job Application Tracker</h1></a>
+
+            <div class="all_tags">
+                <div class="one_tag"><p>Python</p></div>
+                <div class="one_tag"><p>SQLite</p></div>
+            </div>
+
+            <p>A program that keeps track of job applications, and also queries <a href="https://theirstack.com">TheirStack</a> for available jobs</p>
+        </div>
+    </div>
+
+    <button class="nav-btn" onclick="location.href='dice.html';" title="Go to a subpage where you can roll some dice">Dice Roller</button>
+    <button class="nav-btn" onclick="location.href='meme.html';" title="Go to a subpage with random memes">Random memes</button>
+
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+</body>
+</html>
