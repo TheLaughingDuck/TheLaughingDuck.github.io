@@ -1,1 +1,7 @@
 template.html
+
+old_*
+dev_*
+
+.env
+
