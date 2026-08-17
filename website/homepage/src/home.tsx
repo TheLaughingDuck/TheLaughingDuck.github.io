@@ -1,5 +1,5 @@
 import Layout from "./navigation"
-import hero from "./assets/hero.png"
+import hero from "./assets/profile.jpg"
 import { Link } from "react-router"
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
                         </div>
                     </Link>
                     
-                    <div className="border space-fill rounded-lg transition-transform duration-200 hover:scale-105">
+                    <div className="border space-fill rounded-[14vw] overflow-hidden transition-transform duration-200 hover:scale-105">
                         <img src={hero} />
                     </div>
 
