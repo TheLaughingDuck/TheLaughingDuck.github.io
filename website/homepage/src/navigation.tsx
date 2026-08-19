@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router'
-import { NavLink } from 'react-router'
 import Home from './home'
 import Projects from './projects'
 import type { ReactNode } from 'react'
@@ -13,20 +12,11 @@ export function AppRoutes() {
                 <Route path="/" element={<Home />} />
                 <Route path="/aboutme" element={<AboutMe />} />
                 <Route path="/projects" element={<Projects />} />
-        </Routes>
+            </Routes>
         </div>
     )
 }
 
-function Navbar() {
-    return (
-        <li>
-            <NavLink to="/">Home</NavLink>
-            <br />
-            <NavLink to="/projects">Projects</NavLink>
-        </li>
-    )
-}
 
 export default function Layout({ children }: { children: ReactNode }) {
     return(

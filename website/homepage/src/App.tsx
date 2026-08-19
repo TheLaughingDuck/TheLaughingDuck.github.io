@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { AppRoutes } from './navigation'
 
 export default function App() {
