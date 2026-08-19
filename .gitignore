@@ -1,6 +1,8 @@
-template.html
 workflow.md
-
 node_modules
 
-old*
+
+old_*
+dev_*
+
+.env
