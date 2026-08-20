@@ -17,7 +17,23 @@ export default function Home() {
 
                     {/* Center picture */}
                     <div className="p-4 flex items-center">
-                        <img src={hero} className="max-w-[200px] rounded-[14vw] object-contain  shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl" />
+                        <div className="group [perspective:1000px] w-64 h-64">
+                            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+
+                                {/* Front side */}
+                                <div className="absolute inset-0 flex items-center justify-center [backface-visibility:hidden]">
+                                    <img src={hero} className="max-w-[200px] rounded-[14vw] object-cover shadow-md" />
+                                </div>
+
+                                {/* Back side */}
+                                <div className="absolute inset-0 flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                                    <div className="p-4 w-44 h-full bg-gray-200 rounded-[14vw] flex items-center justify-center">
+                                        <p>This picture was taken at my Master's graduation ceremony in June 2025. It already feels like a long time ago :)</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
                     {/* Projects */}
@@ -30,7 +46,7 @@ export default function Home() {
                 </div>
 
                 {/* Bottom introduction */}
-                <div className="p-2 h-full rounded-lg bg-gray-100 shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <div className="flex justify-center items-center p-4 rounded-lg bg-gray-100 shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl">
                     Hi! I'm Simon, a Data Engineer and Software Developer working as a consultant at Sogeti. My background is a Master's in Statistics and Machine Learning, and a Bachelor's in mathematical statistics. I have worked with all stages of the data management pipeline; obtaining, storing, managing, summarising and visualizing. My main interest lies in planning and implementing IT systems, from small applications up to large systems requiring many interconnected parts. 
                 </div>
             </div>
