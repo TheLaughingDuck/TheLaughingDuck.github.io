@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Job application automation",
+        "description": "Tired of manually tracking hundreds of job applications, I built a management system with a UI-widget and a SQLite database. The user can filter their applications, mark the current stage (applied/interviewed/accepted/rejected) and more. I also connected it to an API that automatically scrapes the internet for relevant job listings.",
+        "when": "Autumn of 2025",
+        "link": "https://github.com/TheLaughingDuck/job_search",
+        "tags": ["Python", "SQLite", "Tkinter"]
+    },
+
+    {
+        "title": "Brain tumour classification using Deep Learning",
+        "description": "In my Master's thesis I classified diagnosis and location of tumours by fine-tuning pre-trained ResNet and VisionTransformer models on MRI sequence combinations.",
+        "when": "Spring of 2025",
+        "link": "https://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1983250&dswid=1435",
+        "tags": ["Python", "PyTorch", "CNN", "ViT", "MONAI", "Statistics"]
+    },
+
+    {
+        "title": "Personal website",
+        "description": "I designed and built this website myself.",
+        "when": "2025-2026",
+        "link": "https://simonjorstedt.com",
+        "tags": ["Typescript", "React", "Web Development"]
+    },
+
+    {
+        "title": "Work Clock",
+        "description": "A timer widget that saves work-session data in a SQLite database, and automatically generates plots for immediate insight.",
+        "when": "Autumn of 2025",
+        "link": "https://github.com/TheLaughingDuck/Work_clock",
+        "tags": ["Python", "SQLite", "Matplotlib"]
+    },
+
+    {
+        "title": "Initialization of k-means",
+        "description": "In my Bachelor's thesis I investigated three initialization methods for the k-means algorithm.",
+        "when": "Spring of 2023",
+        "link": "https://kurser.math.su.se/mod/folder/view.php?id=13969",
+        "tags": ["Python", "Machine Learning", "Unsupervised Learning"]
+    }
+]
