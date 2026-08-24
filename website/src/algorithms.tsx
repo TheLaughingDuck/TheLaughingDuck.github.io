@@ -65,6 +65,19 @@ export default function Algorithms() {
         return () => clearInterval(interval);
     }, [isActive]);
 
+    const bgColours: Record<string, string> = {
+        0: "bg-blue-000",
+        1: "bg-blue-100",
+        2: "bg-blue-200",
+        3: "bg-blue-300",
+        4: "bg-blue-400",
+        5: "bg-blue-500",
+        6: "bg-blue-600",
+        7: "bg-blue-700",
+        8: "bg-blue-800",
+        9: "bg-blue-900",
+    }
+
 
     return (
         <Layout>
@@ -84,7 +97,7 @@ export default function Algorithms() {
 
                 <div className="flex space-x-1 p-3">
                     {currentArray.map(number => 
-                        <div className="border p-3">{number}</div>
+                        <div className={`${bgColours[number]} border p-3`}>{number}</div>
                     )}
                 </div>
 
