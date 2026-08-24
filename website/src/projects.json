@@ -12,7 +12,7 @@
         "description": "In my Master's thesis I classified diagnosis and location of tumours by fine-tuning pre-trained ResNet and VisionTransformer models on MRI sequence combinations.",
         "when": "Spring of 2025",
         "link": "https://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1983250&dswid=1435",
-        "tags": ["Python", "PyTorch", "CNN", "ViT", "MONAI", "Statistics"]
+        "tags": ["Python", "PyTorch", "CNN", "ViT", "MONAI", "Statistics", "Machine Learning"]
     },
 
     {
@@ -28,7 +28,7 @@
         "description": "A timer widget that saves work-session data in a SQLite database, and automatically generates plots for immediate insight.",
         "when": "Autumn of 2025",
         "link": "https://github.com/TheLaughingDuck/Work_clock",
-        "tags": ["Python", "SQLite", "Matplotlib"]
+        "tags": ["Python", "SQLite", "Matplotlib", "Statistics"]
     },
 
     {
