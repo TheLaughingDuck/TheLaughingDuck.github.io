@@ -1,11 +1,24 @@
-import Layout from "./navigation"
+import Layout from "./navigation";
 import projects from "./projects.json";
+import { useState } from "react";
 
 export default function Projects() {
+    // Set up tag filter
+    const allTags = ["React", "Python", "SQLite", "Tkinter", "PyTorch", "CNN", "ViT", "Statistics", "Typescript", "Web Development", "Matplotlib", "Machine Learning", "Unsupervised Learning", "MONAI"];
+    const [activeTags, setActiveTags] = useState<string[]>([]);
+    const filteredProjects = activeTags.length === 0 ? projects : projects.filter(proj => activeTags.some(tag => proj.tags.includes(tag)));
 
-    console.log(projects)
+    function toggleTag(tag: string) {
+        if (activeTags.includes(tag)) {
+            setActiveTags(activeTags.filter(t => t !== tag));
+        } else {
+            setActiveTags([...activeTags, tag]);
 
-    const items = projects.map(proj => 
+        }
+    }
+
+    // Create Project Cards
+    const items = filteredProjects.map(proj => 
             <ProjectCard
                 title={proj.title}
                 description={proj.description}
@@ -16,12 +29,23 @@ export default function Projects() {
 
     return (
         <Layout>
-            <h1>My projects</h1>
-
             <div className="">
+                <h1 className="font-bold">Filter on tags</h1>
                 {/* Tag choices */}
-                <div>Tag choices</div>
+                <div>
+                    {allTags.map(tag => (
+                        <button
+                            key={tag}
+                            onClick={() => toggleTag(tag)}
+                            className={
+                                `${activeTags.includes(tag) ? "bg-blue-500 text-white" : "bg-gray-200 text-black"} p-2 m-1 rounded`
+                            }>{tag}</button>
+                    ))}
+                </div>
 
+                <br/>
+
+                {/* Projects */}
                 <div className="flex flex-wrap gap-6 justify-center">{items}</div>
                 
                 {/* <Link to="/algorithms"><ProjectCard title="Algorithms" /></Link> */}
@@ -47,7 +71,7 @@ function ProjectCard({ title = "title", description = "desc.", when = "date", li
                 <p>{description}</p>
                 <br/>
 
-                <div className="flex flex-row space-x-1">
+                <div className="flex flex-wrap space-x-1 space-y-1">
                     {
                         tags.map(tag => (
                             <span key={tag} className="bg-green-600 p-1 rounded-xl">{tag}</span>
