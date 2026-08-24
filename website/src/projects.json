@@ -27,7 +27,7 @@
         "title": "Visualisations of sorting algorithms",
         "description": "I implemented a couple of sorting algorithms, and created a visualisation of them, available on this very site!",
         "when": "Autumn of 2026",
-        "link": "/algorithms",
+        "link": "https://simonjorstedt.com/algorithms",
         "tags": ["Typescript", "React"]
     },
 

@@ -15,7 +15,7 @@ export function AppRoutes() {
                 <Route path="/aboutme" element={<AboutMe />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/algorithms" element={<Algorithms />} />
-                <Route path="/*" element={<NotFound />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </div>
     )
