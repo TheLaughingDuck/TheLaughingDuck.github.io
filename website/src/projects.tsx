@@ -1,4 +1,3 @@
-import { Link } from "react-router"
 import Layout from "./navigation"
 import projects from "./projects.json";
 
