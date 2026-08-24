@@ -4,6 +4,7 @@ import Projects from './projects'
 import type { ReactNode } from 'react'
 import AboutMe from './aboutMe'
 import { Link } from 'react-router'
+import NotFound from './notFound'
 
 export function AppRoutes() {
     return (
@@ -12,6 +13,7 @@ export function AppRoutes() {
                 <Route path="/" element={<Home />} />
                 <Route path="/aboutme" element={<AboutMe />} />
                 <Route path="/projects" element={<Projects />} />
+                <Route path="/*" element={<NotFound />} />
             </Routes>
         </div>
     )
