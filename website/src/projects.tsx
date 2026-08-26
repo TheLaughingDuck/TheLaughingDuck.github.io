@@ -64,7 +64,7 @@ export default function Projects() {
                             key={tag}
                             onClick={() => toggleTag(tag)}
                             className={
-                                `${activeTags.includes(tag) ? "bg-green-600 text-black" : "bg-gray-200 text-black"} p-2 m-1 rounded cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl`
+                                `${activeTags.includes(tag) ? "bg-green-600 text-black" : "bg-gray-200 text-black"} rounded-xl p-2 m-1 rounded cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl`
                             }>{tag}</button>
                     ))}
                 </div>
