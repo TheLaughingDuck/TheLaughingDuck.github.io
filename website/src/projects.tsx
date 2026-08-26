@@ -20,7 +20,8 @@ export default function Projects() {
 
     function ProjectCard({ title = "title", description = "desc.", when = "date", link="simonjorstedt.com", tags = ["A", "B"]}: ProjectCardProps) {
         return (
-            <div className="h-full flex flex-col border-1 p-2 max-w-sm shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+            <div className="rounded-xl bg-gray-200 h-full flex flex-col border-3 border-gray-300 p-2 max-w-sm shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                {/* Project information */}
                 <Link to={link}>
                     <div className="">
                         <h1 className="font-bold">{title}</h1>
@@ -29,16 +30,16 @@ export default function Projects() {
                         <br/>
                     </div>
                 </Link>
-
-                <div className="flex flex-wrap space-x-1 space-y-1">
+                
+                {/* Project Tags */}
+                <div className="flex flex-wrap space-x-1 space-y-0">
                     {
                         tags.map(tag => (
-                            <p key={tag} onClick={() => toggleTag(tag)} className="cursor-pointer bg-green-600 p-1.5 rounded-xl transition-transform duration-200 hover:scale-110 hover:shadow-xl ">{tag}</p>
+                            <p key={tag} onClick={() => toggleTag(tag)} className="cursor-pointer bg-green-600 p-1.5 rounded-xl transition-transform duration-200 hover:scale-110 hover:shadow-xl">{tag}</p>
                         ))
                     }
                 </div>
             </div>
-            
         )
     }
 
