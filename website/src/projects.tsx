@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 export default function Projects() {
     // Set up tag filter
-    const allTags = ["React", "Python", "SQLite", "Tkinter", "PyTorch", "CNN", "ViT", "Statistics", "Typescript", "Web Development", "Matplotlib", "Machine Learning", "Unsupervised Learning", "MONAI"];
+    const allTags = ["React", "Python", "SQL", "Postgres", "Tkinter", "PyTorch", "CNN", "ViT", "Statistics", "Typescript", "Web Development", "Matplotlib", "Machine Learning", "Unsupervised Learning", "MONAI", "R", "Computer science"];
     const [activeTags, setActiveTags] = useState<string[]>([]);
     const filteredProjects = activeTags.length === 0 ? projects : projects.filter(proj => activeTags.some(tag => proj.tags.includes(tag)));
 

@@ -4,7 +4,7 @@
         "description": "Tired of manually tracking hundreds of job applications, I built a management system with a UI-widget and a SQLite database. The user can filter their applications, mark the current stage (applied/interviewed/accepted/rejected) and more. I also connected it to an API that automatically scrapes the internet for relevant job listings.",
         "when": "Autumn of 2025",
         "link": "https://github.com/TheLaughingDuck/job_search",
-        "tags": ["Python", "SQLite", "Tkinter"]
+        "tags": ["Python", "SQL", "Tkinter"]
     },
 
     {
@@ -12,7 +12,7 @@
         "description": "In my Master's thesis I classified diagnosis and location of tumours by fine-tuning pre-trained ResNet and VisionTransformer models on MRI sequence combinations.",
         "when": "Spring of 2025",
         "link": "https://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1983250&dswid=1435",
-        "tags": ["Python", "PyTorch", "CNN", "ViT", "MONAI", "Statistics", "Machine Learning"]
+        "tags": ["Python", "PyTorch", "CNN", "ViT", "MONAI", "Statistics", "Machine Learning", "Computer science"]
     },
 
     {
@@ -28,7 +28,7 @@
         "description": "I implemented a couple of sorting algorithms, and created a visualisation of them, available on this very site!",
         "when": "Autumn of 2026",
         "link": "/algorithms",
-        "tags": ["Typescript", "React"]
+        "tags": ["Typescript", "React", "Computer science"]
     },
 
     {
@@ -36,7 +36,7 @@
         "description": "A timer widget that saves work-session data in a SQLite database, and automatically generates plots for immediate insight.",
         "when": "Autumn of 2025",
         "link": "https://github.com/TheLaughingDuck/Work_clock",
-        "tags": ["Python", "SQLite", "Matplotlib", "Statistics"]
+        "tags": ["Python", "SQL", "Matplotlib", "Statistics"]
     },
 
     {
@@ -44,6 +44,22 @@
         "description": "In my Bachelor's thesis I investigated three initialization methods for the k-means algorithm.",
         "when": "Spring of 2023",
         "link": "https://kurser.math.su.se/mod/folder/view.php?id=13969",
-        "tags": ["Python", "Machine Learning", "Unsupervised Learning"]
+        "tags": ["Python", "Machine Learning", "Unsupervised Learning", "Computer science"]
+    },
+
+    {
+        "title": "Knapsack problem solving",
+        "description": "As part of a university course, (Advanced R)\", I wrote several scripts simulating and solving the Knapsack problem, a common computer science challenge.",
+        "when": "Autumn of 2023",
+        "link": "https://github.com/TheLaughingDuck/knapsackR",
+        "tags": ["R", "Computer science"]
+    },
+
+    {
+        "title": "Simulation of a Train management system",
+        "description": "Out of pure interest, I built a system for managing trains, trips, departures etc. This was a great and fun project where I got to experiment with lots of interconnected system parts, and arrange them so that they worked well together.",
+        "when": "Autumn of 2025",
+        "link": "https://github.com/TheLaughingDuck/trains",
+        "tags": ["Python", "SQL", "Postgres", "Tkinter"]
     }
 ]
