@@ -1,6 +1,7 @@
 import Layout from "./navigation";
 import projects from "./projects.json";
 import { useState } from "react";
+import { Link } from "react-router";
 
 export default function Projects() {
     // Set up tag filter
@@ -64,7 +65,7 @@ type ProjectCardProps = {
 
 function ProjectCard({ title = "title", description = "desc.", when = "date", link="simonjorstedt.com", tags = ["A", "B"]}: ProjectCardProps) {
     return (
-        <a href={link}>
+        <Link to={link}>
             <div className="h-full flex flex-col border-1 p-2 max-w-sm shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl">
                 <h1 className="font-bold">{title}</h1>
                 <p className="italic">({when})</p>
@@ -79,6 +80,6 @@ function ProjectCard({ title = "title", description = "desc.", when = "date", li
                     }
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
