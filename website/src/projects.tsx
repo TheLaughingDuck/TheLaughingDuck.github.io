@@ -18,6 +18,30 @@ export default function Projects() {
         }
     }
 
+    function ProjectCard({ title = "title", description = "desc.", when = "date", link="simonjorstedt.com", tags = ["A", "B"]}: ProjectCardProps) {
+        return (
+            <div className="h-full flex flex-col border-1 p-2 max-w-sm shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                <Link to={link}>
+                    <div className="">
+                        <h1 className="font-bold">{title}</h1>
+                        <p className="italic">({when})</p>
+                        <p>{description}</p>
+                        <br/>
+                    </div>
+                </Link>
+
+                <div className="flex flex-wrap space-x-1 space-y-1">
+                    {
+                        tags.map(tag => (
+                            <p key={tag} onClick={() => toggleTag(tag)} className="cursor-pointer bg-green-600 p-1.5 rounded-xl transition-transform duration-200 hover:scale-110 hover:shadow-xl ">{tag}</p>
+                        ))
+                    }
+                </div>
+            </div>
+            
+        )
+    }
+
     // Create Project Cards
     const items = filteredProjects.map(proj => 
             <ProjectCard
@@ -39,7 +63,7 @@ export default function Projects() {
                             key={tag}
                             onClick={() => toggleTag(tag)}
                             className={
-                                `${activeTags.includes(tag) ? "bg-blue-500 text-white" : "bg-gray-200 text-black"} p-2 m-1 rounded`
+                                `${activeTags.includes(tag) ? "bg-green-600 text-black" : "bg-gray-200 text-black"} p-2 m-1 rounded cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl`
                             }>{tag}</button>
                     ))}
                 </div>
@@ -48,8 +72,6 @@ export default function Projects() {
 
                 {/* Projects */}
                 <div className="flex flex-wrap gap-6 justify-center">{items}</div>
-                
-                {/* <Link to="/algorithms"><ProjectCard title="Algorithms" /></Link> */}
             </div>        
         </Layout>
     )
@@ -63,23 +85,3 @@ type ProjectCardProps = {
     tags?: string[]
 }
 
-function ProjectCard({ title = "title", description = "desc.", when = "date", link="simonjorstedt.com", tags = ["A", "B"]}: ProjectCardProps) {
-    return (
-        <Link to={link}>
-            <div className="h-full flex flex-col border-1 p-2 max-w-sm shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl">
-                <h1 className="font-bold">{title}</h1>
-                <p className="italic">({when})</p>
-                <p>{description}</p>
-                <br/>
-
-                <div className="flex flex-wrap space-x-1 space-y-1">
-                    {
-                        tags.map(tag => (
-                            <span key={tag} className="bg-green-600 p-1 rounded-xl">{tag}</span>
-                        ))
-                    }
-                </div>
-            </div>
-        </Link>
-    )
-}
