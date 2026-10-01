@@ -23,7 +23,7 @@ export default function GameOfLife(){
 
     function InitializeGrid(n_rows: number, n_cols: number): number [][] {
 
-        let grid = [];
+        let grid: number[][] = [];
 
         for (let i=0; i < n_rows; i++){
             grid[i] = []
