@@ -19,9 +19,9 @@ export default function GameOfLife(){
         return () => clearInterval(interval);
     }, []);
 
-    function randInt(lo, hi) { return Math.floor(Math.random()*(hi-lo+1))+lo; }
+    function randInt(lo: number, hi: number): number { return Math.floor(Math.random()*(hi-lo+1))+lo; }
 
-    function InitializeGrid(n_rows, n_cols){
+    function InitializeGrid(n_rows: number, n_cols: number): number [][] {
 
         let grid = [];
 
@@ -70,8 +70,8 @@ export default function GameOfLife(){
         setGrid(new_grid)
     }
 
-    function count_alive_cells(grid){
-        return grid.flat(Infinity).reduce((partialSum, number) => partialSum + number, 0)
+    function count_alive_cells(grid: number[][]): number{
+        return grid.flat(2).reduce((partialSum, number) => partialSum + number, 0)
     }
 
     return (
