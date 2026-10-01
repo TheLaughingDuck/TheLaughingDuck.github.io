@@ -6,6 +6,7 @@ import AboutMe from './aboutMe'
 import { Link } from 'react-router'
 import Algorithms from './algorithms'
 import NotFound from './notFound'
+import GameOfLife from './gameOfLife'
 
 export function AppRoutes() {
     return (
@@ -15,6 +16,7 @@ export function AppRoutes() {
                 <Route path="/aboutme" element={<AboutMe />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/algorithms" element={<Algorithms />} />
+                <Route path="/game_of_life" element={<GameOfLife />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </div>

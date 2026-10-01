@@ -20,7 +20,7 @@
         "description": "I designed and built this website myself.",
         "when": "2025-2026",
         "link": "/",
-        "tags": ["Typescript", "React", "Web Development"]
+        "tags": ["Javascript/Typescript", "React", "Web Development"]
     },
 
     {
@@ -28,7 +28,7 @@
         "description": "I implemented a couple of sorting algorithms, and created a visualisation of them, available on this very site!",
         "when": "Autumn of 2026",
         "link": "/algorithms",
-        "tags": ["Typescript", "React", "Computer science"]
+        "tags": ["Javascript/Typescript", "React", "Computer science"]
     },
 
     {
@@ -61,5 +61,13 @@
         "when": "Autumn of 2025",
         "link": "https://github.com/TheLaughingDuck/trains",
         "tags": ["Python", "SQL", "Postgres", "Tkinter"]
+    },
+
+    {
+        "title": "Game of Life",
+        "description": "I implemented Conway's Game of Life, a cellular automata. Basically, a grid of squares that can be either \"alive\" or \"dead\". Depending on surrounding squares, each square changes to simulate overpopulation and underpopulation.",
+        "when": "Autumn of 2026",
+        "link": "/game_of_life",
+        "tags": ["React", "Javascript / Typescript", "Web Development"]
     }
 ]
