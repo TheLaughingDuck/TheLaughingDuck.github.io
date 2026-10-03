@@ -3,9 +3,17 @@ import Layout from "./navigation"
 
 export default function GameOfLife(){
     //const [grid, setGrid] = useState([[0,0,0], [1,1,1], [0,0,1]])
-    const n_rows = 50;
-    const n_cols = 50;
-    const [grid, setGrid] = useState(getRandomGrid(n_rows, n_cols));
+    //const n_rows = 300;
+    //const n_cols = 300;
+    
+    const [inputNRows, setInputNRows] = useState(10);
+    const [nRows, setNRows] = useState(10);
+
+    const [inputNCols, setInputNCols] = useState(10);
+    const [nCols, setNCols] = useState(10);
+
+
+    const [grid, setGrid] = useState(getRandomGrid());
     const [isRunning, setIsRunning] = useState(false);
 
     useEffect(() => {
@@ -21,22 +29,20 @@ export default function GameOfLife(){
 
     function randInt(lo: number, hi: number): number { return Math.floor(Math.random()*(hi-lo+1))+lo; }
 
-    function getRandomGrid(n_rows: number, n_cols: number): number [][] {
-        //const n_rows = grid.length();
-        //const n_cols = grid[0].length();
+    function getRandomGrid(): number [][] {
 
         let new_grid: number[][] = [];
 
-        for (let i=0; i < n_rows; i++){
+        for (let i=0; i < nRows; i++){
             new_grid[i] = []
-            for (let j=0; j<n_cols; j++){
+            for (let j=0; j<nCols; j++){
                 new_grid[i][j] = randInt(0, 1);
             }
         }
         return new_grid;
     }
 
-    function getUpdatedGrid(grid): number [][] {
+    function getUpdatedGrid(grid: number[][]): number [][] {
         const new_grid = grid.map(row => [...row]);
         let modifiers = [ [-1, 0], [-1,-1], [0, -1], [+1, -1], [+1, 0], [+1, +1], [0, +1], [-1, +1] ]
 
@@ -96,11 +102,6 @@ export default function GameOfLife(){
             <div>
                 <div>
                     <p>Number of alive cells: {count_alive_cells(grid)}</p>
-                    
-                    <button className='bg-yellow border' onClick={() => setGrid(getRandomGrid(n_rows, n_cols))}>Re-initialize grid</button>
-
-                    <br/>
-
                     <button className='bg-yellow border' onClick={() => setGrid(getUpdatedGrid(grid))}>Update</button>
 
                     <br/>
@@ -110,6 +111,13 @@ export default function GameOfLife(){
                     <br/>
 
                     <button className='bg-yellow border' onClick={() => setIsRunning(!isRunning)}>{isRunning ? "Stop" : "Start"}</button>
+                    <br/>
+                    <p>Number of rows</p>
+                    <input name="nRowsInput" value={inputNRows} type="number" onChange={(e) => setInputNRows(Number(e.target.value))}></input>
+                    <p>Number of cols</p>
+                    <input name="nColsInput" value={inputNCols} type="number" onChange={(e) => setInputNCols(Number(e.target.value))}></input>
+                    <br/>
+                    <button className='bg-yellow border' onClick={() => {setNRows(inputNRows); setNCols(inputNCols); setGrid(getRandomGrid())}}>Re-initialize grid</button>
                 </div>
 
                 <div className="bg-white flex flex-col p-1 max-w-md mx-auto">
