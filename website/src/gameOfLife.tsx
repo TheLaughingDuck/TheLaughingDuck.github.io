@@ -3,21 +3,9 @@ import Layout from "./navigation"
 
 export default function GameOfLife(){
     //const [grid, setGrid] = useState([[0,0,0], [1,1,1], [0,0,1]])
-    const n_rows = 30;
-    const n_cols = 30;
+    const n_rows = 50;
+    const n_cols = 50;
     const [grid, setGrid] = useState(InitializeGrid(n_rows, n_cols));
-
-    const updateRef = useRef(Update_Grid);
-
-    useEffect(() => {
-        updateRef.current = Update_Grid;
-    });
-
-    useEffect(() => {
-        const interval = setInterval(() => {updateRef.current();}, 200);
-        
-        return () => clearInterval(interval);
-    }, []);
 
     function randInt(lo: number, hi: number): number { return Math.floor(Math.random()*(hi-lo+1))+lo; }
 
@@ -70,6 +58,26 @@ export default function GameOfLife(){
         setGrid(new_grid)
     }
 
+    function flipCell(row: number, col: number){
+        const new_grid = grid.map(row => [...row]);
+
+        new_grid[row][col] = new_grid[row][col] == 1 ? 0 : 1;
+
+        setGrid(new_grid);
+    }
+
+    function Clear_Grid(){
+        const new_grid = grid.map(row => [...row]);
+
+        for (let i=0; i<grid.length; i++){
+            for (let j=0; j<grid[i].length; j++){
+                new_grid[i][j] = 0;
+            }
+        }
+
+        setGrid(new_grid);
+    }
+
     function count_alive_cells(grid: number[][]): number{
         return grid.flat(2).reduce((partialSum, number) => partialSum + number, 0)
     }
@@ -81,13 +89,21 @@ export default function GameOfLife(){
                     <p>Number of alive cells: {count_alive_cells(grid)}</p>
                     
                     <button className='bg-yellow border' onClick={() => setGrid(InitializeGrid(n_rows, n_cols))}>Re-initialize grid</button>
+
+                    <br/>
+
+                    <button className='bg-yellow border' onClick={() => Update_Grid()}>Update</button>
+
+                    <br/>
+
+                    <button className='bg-yellow border' onClick={() => Clear_Grid()}>Clear</button>
                 </div>
 
-                <div className="flex flex-col p-4 max-w-md mx-auto">
+                <div className="bg-white flex flex-col p-1 max-w-md mx-auto">
                     {grid.map((row, rowIndex) =>
                         <div key={rowIndex} className="flex justify-between">
                             {row.map((cell, celIndex) =>
-                                <div key={celIndex} className="flex-1 flex justify-center aspect-square" style={{backgroundColor: cell ? "yellow" : "black"}}>
+                                <div key={celIndex} onClick={() => flipCell(rowIndex, celIndex)} className="flex-1 flex justify-center aspect-square" style={{backgroundColor: cell ? "yellow" : "black"}}>
                                     
                                 </div>
                             )}
