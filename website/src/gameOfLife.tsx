@@ -5,28 +5,39 @@ export default function GameOfLife(){
     //const [grid, setGrid] = useState([[0,0,0], [1,1,1], [0,0,1]])
     const n_rows = 50;
     const n_cols = 50;
-    const [grid, setGrid] = useState(InitializeGrid(n_rows, n_cols));
+    const [grid, setGrid] = useState(getRandomGrid(n_rows, n_cols));
+    const [isRunning, setIsRunning] = useState(false);
+
+    useEffect(() => {
+        if(!isRunning) return;
+
+        const intervalID = window.setInterval(() => {
+            setGrid((grid) => getUpdatedGrid(grid));
+
+        }, 1000);
+
+        return () => window.clearInterval(intervalID);
+    }, [isRunning]);
 
     function randInt(lo: number, hi: number): number { return Math.floor(Math.random()*(hi-lo+1))+lo; }
 
-    function InitializeGrid(n_rows: number, n_cols: number): number [][] {
+    function getRandomGrid(n_rows: number, n_cols: number): number [][] {
+        //const n_rows = grid.length();
+        //const n_cols = grid[0].length();
 
-        let grid: number[][] = [];
+        let new_grid: number[][] = [];
 
         for (let i=0; i < n_rows; i++){
-            grid[i] = []
+            new_grid[i] = []
             for (let j=0; j<n_cols; j++){
-                grid[i][j] = randInt(0, 1);
+                new_grid[i][j] = randInt(0, 1);
             }
         }
-        return grid;
+        return new_grid;
     }
 
-    function Update_Grid(){
+    function getUpdatedGrid(grid): number [][] {
         const new_grid = grid.map(row => [...row]);
-
-        //console.log("Updating!")
-
         let modifiers = [ [-1, 0], [-1,-1], [0, -1], [+1, -1], [+1, 0], [+1, +1], [0, +1], [-1, +1] ]
 
         for (let i=0; i<grid.length; i++){
@@ -53,9 +64,7 @@ export default function GameOfLife(){
             }
         }
 
-        // Update the old grid
-        //console.log(new_grid)
-        setGrid(new_grid)
+        return new_grid;
     }
 
     function flipCell(row: number, col: number){
@@ -66,7 +75,7 @@ export default function GameOfLife(){
         setGrid(new_grid);
     }
 
-    function Clear_Grid(){
+    function getClearGrid(): number [][] {
         const new_grid = grid.map(row => [...row]);
 
         for (let i=0; i<grid.length; i++){
@@ -75,7 +84,7 @@ export default function GameOfLife(){
             }
         }
 
-        setGrid(new_grid);
+        return new_grid;
     }
 
     function count_alive_cells(grid: number[][]): number{
@@ -88,15 +97,19 @@ export default function GameOfLife(){
                 <div>
                     <p>Number of alive cells: {count_alive_cells(grid)}</p>
                     
-                    <button className='bg-yellow border' onClick={() => setGrid(InitializeGrid(n_rows, n_cols))}>Re-initialize grid</button>
+                    <button className='bg-yellow border' onClick={() => setGrid(getRandomGrid(n_rows, n_cols))}>Re-initialize grid</button>
 
                     <br/>
 
-                    <button className='bg-yellow border' onClick={() => Update_Grid()}>Update</button>
+                    <button className='bg-yellow border' onClick={() => setGrid(getUpdatedGrid(grid))}>Update</button>
 
                     <br/>
 
-                    <button className='bg-yellow border' onClick={() => Clear_Grid()}>Clear</button>
+                    <button className='bg-yellow border' onClick={() => setGrid(getClearGrid())}>Clear</button>
+
+                    <br/>
+
+                    <button className='bg-yellow border' onClick={() => setIsRunning(!isRunning)}>{isRunning ? "Stop" : "Start"}</button>
                 </div>
 
                 <div className="bg-white flex flex-col p-1 max-w-md mx-auto">
