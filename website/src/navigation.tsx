@@ -7,6 +7,7 @@ import { Link } from 'react-router'
 import Algorithms from './algorithms'
 import NotFound from './notFound'
 import GameOfLife from './gameOfLife'
+import NoticeBoard from './noticeBoard'
 
 export function AppRoutes() {
     return (
@@ -17,6 +18,7 @@ export function AppRoutes() {
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/algorithms" element={<Algorithms />} />
                 <Route path="/game_of_life" element={<GameOfLife />} />
+                <Route path="/notice_board" element={<NoticeBoard />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </div>
