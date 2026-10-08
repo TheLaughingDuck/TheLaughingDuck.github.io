@@ -9,7 +9,7 @@ interface NoteObject {
 }
 
 async function getData(): Promise<NoteObject[]> {
-    const the_url = import.meta.env.BACKEND_URL;
+    const the_url = import.meta.env.VITE_BACKEND_URL;
     const response = await fetch(`${the_url}/get_data`);
     const data: NoteObject[] = await response.json();
     return data;
