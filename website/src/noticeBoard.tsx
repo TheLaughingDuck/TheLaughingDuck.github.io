@@ -9,7 +9,8 @@ interface NoteObject {
 }
 
 async function getData(): Promise<NoteObject[]> {
-    const response = await fetch("https://homepage-backend-sigma.vercel.app/get_data");
+    const the_url = import.meta.env.BACKEND_URL;
+    const response = await fetch(`${the_url}/get_data`);
     const data: NoteObject[] = await response.json();
     return data;
 }
