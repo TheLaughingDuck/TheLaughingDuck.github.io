@@ -15,14 +15,6 @@ async function getData(): Promise<NoteObject[]> {
     return data;
 }
 
-export function NoteCard(a){
-    return(
-        <div className='card'>
-            <p>{a.id}</p>
-        </div>
-    )
-}
-
 export default function NoticeBoard() {
     const [notes, setNotes] = useState<NoteObject[]>([]);
     const [isloading, setIsLoading] = useState(true);
@@ -47,7 +39,9 @@ export default function NoticeBoard() {
         <Layout>
             {
                 notes.map((a) => (
-                    <NoteCard>{a.id}</NoteCard>
+                    <div className="bg-yellow-200 m-2 p-2 max-w-sm shadow-md transition-transform duration-200 hover:scale-105 hover:shadow-xl">
+                        {a.content}<br/>- {a.author}
+                    </div>
                 ))
             }
         </Layout>
