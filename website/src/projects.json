@@ -69,5 +69,13 @@
         "when": "Autumn of 2026",
         "link": "/game_of_life",
         "tags": ["React", "Javascript / Typescript", "Web Development"]
+    },
+
+    {
+        "title": "Notice Board",
+        "description": "Curious to experiment with software architectures involving multiple separate but connected components, I built a 'Notice board' where visitors can submit notes. The architecture involved coordinating a frontend, backend, and a database, as well as security and user experience considerations.",
+        "when": "Autumn of 2026",
+        "link": "/notice_board",
+        "tags": ["React", "Javascript / Typescript", "Web Development", "SQL"]
     }
 ]
