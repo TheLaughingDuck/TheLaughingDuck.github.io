@@ -6,3 +6,6 @@ old_*
 dev_*
 
 .env
+
+# Editor directories and files
+.vscode/*
